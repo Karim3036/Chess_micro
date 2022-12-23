@@ -49,7 +49,7 @@ king_limitations proc far
     cmp ax,0
     je next1
     mov [SI],di
-    inc si
+    add si,2
     next1:
 
     sub di,320 ;top left
@@ -60,7 +60,7 @@ king_limitations proc far
     cmp ax,0
     je next2
     mov [SI],di
-    inc si
+    add si,2
     next2:
 
     add di,22 ;top 
@@ -71,7 +71,7 @@ king_limitations proc far
     cmp ax,0
     je next3
     mov [SI],di
-    inc si
+    add si,2
     next3:
 
     add di,22 ;top right
@@ -82,7 +82,7 @@ king_limitations proc far
      cmp ax,0
      je next4
      mov [SI],di
-     inc si
+     add si,2
      next4:
 
      add di,320 ; right
@@ -93,7 +93,7 @@ king_limitations proc far
      cmp ax,0
      je next5
      mov [SI],di
-     inc si
+     add si,2
      next5:
 
      add di,320 ;down right
@@ -104,7 +104,7 @@ king_limitations proc far
      cmp ax,0
      je next6
      mov [SI],di
-     inc si
+     add si,2
      next6:
 
      sub di,22 ;down 
@@ -115,7 +115,7 @@ king_limitations proc far
      cmp ax,0
      je next7
      mov [SI],di
-     inc si
+     add si,2
      next7: 
      sub di,22 ;down left
     ;we need to check for it not to pass the boundaries 
@@ -125,9 +125,9 @@ king_limitations proc far
      cmp ax,0
      je next8
      mov [SI],di
-     inc si
+     add si,2
      next8:
-
+     
     PopALL
 king_limitations endp
 
