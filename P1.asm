@@ -2849,16 +2849,9 @@ PushALL
     mov Val,al
     call sendChar
     PopALL
-    ;Clear
-    ;Move_Cursor 0,23
-    ;DisplayString line
-    ;Move_Cursor 0,24
-    ;DisplayString ExitChatMsg
+
     Call InitializationSerial
     call clear_status_bar
-    ;Drawing a horz line at the middle if the Screen 
-    ;Move_Cursor 0,11
-    ;DisplayString line
         
     movecursor P1Cursorin
     DisplayStringRead Player1_name
@@ -2883,12 +2876,7 @@ ChatP1in:
     jmp frominline
 Noo_Exit_Chatin: 
     movecursor 1703h ;read from location
-    ReadString P1Chat
-;    Push Cx
-;    Mov Cl,4
-;    SHR P1Chat,Cl
-;    Pop CX
-;    Mov P1Chat,AL ;Move First Charachter  
+    ReadString P1Chat 
     movecursor 1703h
     DisplayStringRead P1Chat
     STRINGCOPY P1Chat,ChatVar,70
@@ -2906,12 +2894,7 @@ loooopin:
     inc si
     dec cx
     jnz loooopin
-        
-        ;mov ax,0600h ;Clear the TextBox
-        ;mov bh,07 
-        ;mov cx,0A00H ;(0,10)
-        ;mov dx,0A50H ;(80,10)
-        ;int 10h    
+
     PopALL
     
     ;Player2 
@@ -2943,38 +2926,11 @@ looopin:
     inc si
     dec cx
     jnz looopin
-   
-        ;mov ax,0600h     ;Clear the TextBox
-        ;mov bh,07 
-        ;mov cx,1500h ;(0,21)
-        ;mov dx,1550h ;(80,21)
-        ;int 10h
-    PopALL
-    ;inc bl
 
-    
-    ;cmp bl,8H           ;Scrolling
-    ;jnc ScrollChat
+    PopALL
+
     jmp ChatP1in
 
-
-;ScrollChat:
-;    PushALL
-;        mov ax,0603h 
-;        mov bh,07 
-;        mov cx,0100H ;(0,1)
-;        mov dx,0A50H ;(80,10)
-;        int 10H
-        
- ;       mov ax,0603h 
- ;       mov bh,07 
- ;       mov cx,0D00h ;(0,13)
- ;       mov dx,1550h ;(80,21)
- ;       int 10h
-
-    ;PopALL
-
-   ;     sub bl,3
         jmp ChatP1in
     frominline:
     PopALL
