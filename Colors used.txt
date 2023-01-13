@@ -1,8 +1,0 @@
-White pieces (Player 1)
-Moving boarder     Green (0AH)
-selected Piece        blue   (1)
-possible moves    purple (9)
-Black pieces (Player 2)
-Moving boarder       Red (4)
-selected Piece         pink(5)
-possible moves       orange (6)
